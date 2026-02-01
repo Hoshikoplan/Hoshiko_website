@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金門天文交流計劃 | 星野的孩子</title>
+    <link rel="icon" href="images/hoshiko.ico">
+    <style>
+        /* 基本樣式設置 */
+        :root {
+            --primary-color: #3f8914b9;
+            --secondary-color: #a2d148;
+            --accent-color: #235789;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微軟正黑體", "Noto Sans TC", sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent-color);
+        }
+
+        /* 頁首樣式 */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        /* 頁尾樣式 */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: #ccc;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Language Toggle utilities */
+        .lang-en {
+            display: none;
+        }
+
+        body.english-mode .lang-zh {
+            display: none;
+        }
+
+        body.english-mode .lang-en {
+            display: inline-block;
+        }
+
+        /* Toggle Button Style */
+        .lang-toggle {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            margin-left: 1rem;
+            font-family: inherit;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Activity Detail Page Styles */
+        .activity-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .activity-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .activity-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            margin-top: -2rem;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .activity-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--light-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .activity-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .activity-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .activity-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5em;
+        }
+
+        .activity-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+
+        /* 漢堡選單按鈕 */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--primary-color);
+                align-items: center;
+                height: 0;
+                overflow: hidden;
+                transition: height 0.3s ease;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                height: 300px;
+                padding: 1rem 0;
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 頁首區域 -->
+    <header>
+        <nav>
+            <div class="logo"><span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span></div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#"><span class="lang-zh">首頁</span><span class="lang-en">Home</span></a></li>
+                <li><a href="index.html#about"><span class="lang-zh">關於我們</span><span class="lang-en">About
+                            Us</span></a></li>
+                <li><a href="index.html#projects"><span class="lang-zh">計畫說明</span><span
+                            class="lang-en">Projects</span></a></li>
+                <li><a href="index.html#projects"><span class="lang-zh">活動紀錄</span><span
+                            class="lang-en">Events</span></a></li>
+                <li><a href="index.html#impact"><span class="lang-zh">影響成果</span><span class="lang-en">Impact</span></a>
+                </li>
+                <li><a href="index.html#contact"><span class="lang-zh">聯絡我們</span><span
+                            class="lang-en">Contact</span></a></li>
+                <li><button class="lang-toggle" id="langToggle">EN / 中</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 活動詳情內容 -->
+    <section class="activity-header">
+        <h1>
+            <span class="lang-zh">金門天文交流計劃</span>
+            <span class="lang-en">Kinmen Astronomy Exchange Program</span>
+        </h1>
+    </section>
+
+    <div class="activity-container">
+        <div class="activity-info">
+            <div class="info-item">
+                <span>📅</span>
+                <span class="lang-zh">2025年6月8日 - 11日</span>
+                <span class="lang-en">June 8 - 11, 2025</span>
+            </div>
+            <div class="info-item">
+                <span>📍</span>
+                <span class="lang-zh">金門縣</span>
+                <span class="lang-en">Kinmen County</span>
+            </div>
+            <div class="info-item">
+                <span>👥</span>
+                <span class="lang-zh">100+名學生</span>
+                <span class="lang-en">100+ Students</span>
+            </div>
+        </div>
+
+        <img src="images/kinmen/IMG_2162.JPG" alt="Kinmen Astronomy Program" class="main-image">
+
+
+        <div class="activity-content">
+            <p>
+                <span class="lang-zh">金門天文跨海交流計劃是一場結合天文、科技與生態的跨島深度交流。</span>
+                <span class="lang-en">Our Kinmen Project has been realized! This is a deep cross-island exchange
+                    combining astronomy, technology, and ecology.</span>
+            </p>
+
+            <!-- Video Section -->
+            <div class="video-container"
+                style="margin: 2rem 0; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                    src="https://www.youtube.com/embed/v4mphYm0bo8" title="Kinmen Project Video" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <!-- Team Section -->
+            <div class="section-block" style="margin-bottom: 2rem;">
+                <h2><span class="lang-zh">團隊成員</span><span class="lang-en">Team Members</span></h2>
+                <ul class="team-list" style="list-style: none; padding-left: 0;">
+                    <li><span class="lang-zh"><strong>謝承安</strong> 臺大物理系二年級 | 臺大天文社社長 | 星野發起人、金門計畫總召</span><span
+                            class="lang-en"><strong>Xie Cheng-An</strong> NTU Physics Year 2 | NTU Astronomy Club
+                            President | Hoshiko Founder, Kinmen Project Coordinator</span></li>
+                    <li><span class="lang-zh"><strong>涂宇軒</strong> 臺大物理系二年級 | 臺大天文社幹部 | 金門計畫總召</span><span
+                            class="lang-en"><strong>Tu Yu-Hsuan</strong> NTU Physics Year 2 | NTU Astronomy Club Cadre |
+                            Kinmen Project Vice Coordinator</span></li>
+                    <li><span class="lang-zh"><strong>許翌倫</strong> 清大物理系二年級 | 清大天文社幹部 | 技術組負責人</span><span
+                            class="lang-en"><strong>Hsu Yi-Lun</strong> NTHU Physics Year 2 | NTHU Astronomy Club Cadre
+                            | Technology Team Lead</span></li>
+                    <li><span class="lang-zh"><strong>蔡沂恩</strong> 清大工科系二年級 | 清大天文社幹部 | 教案負責人</span><span
+                            class="lang-en"><strong>Tsai Yi-En</strong> NTHU ESS Year 2 | NTHU Astronomy Club Cadre |
+                            Lesson Plan Lead</span></li>
+                    <li><span class="lang-zh"><strong>陳柏翰</strong> 臺大物理系二年級 | 臺大天文社幹部 | 教案總負責人</span><span
+                            class="lang-en"><strong>Chen Po-Han</strong> NTU Physics Year 2 | NTU Astronomy Club Cadre |
+                            Head of Lesson Planning</span></li>
+                    <li><span class="lang-zh"><strong>許孟凱</strong> 臺大生科系二年級 | 曾參與野一片夢之海(NGO) | 隊輔組負責人</span><span
+                            class="lang-en"><strong>Hsu Meng-Kai</strong> NTU Life Sci Year 2 | Former "Dream Ocean" NGO
+                            | Team Counselor Lead</span></li>
+                    <li><span class="lang-zh"><strong>陳子彬</strong> 臺大物理系二年級 | 臺大天文社幹部 | 教案負責人</span><span
+                            class="lang-en"><strong>Chen Tzu-Pin</strong> NTU Physics Year 2 | NTU Astronomy Club Cadre
+                            | Lesson Plan Lead</span></li>
+                    <li><span class="lang-zh"><strong>陳欣鈺</strong> 臺大大氣系二年級 | 臺大天文社副社長 | 教案負責人</span><span
+                            class="lang-en"><strong>Chen Hsin-Yu</strong> NTU Atmospheric Sci Year 2 | NTU Astronomy
+                            Club Vice President | Lesson Plan Lead</span></li>
+                    <li><span class="lang-zh"><strong>李曜成</strong> 臺大機械系二年級 | 臺大天文社幹部 | 教案負責人</span><span
+                            class="lang-en"><strong>Li Yao-Cheng</strong> NTU Mech Eng Year 2 | NTU Astronomy Club Cadre
+                            | Lesson Plan Lead</span></li>
+                    <li><span class="lang-zh"><strong>謝菀芸</strong> 政大法律系二年級 | 政大天文社社長 | 路邊天文負責人</span><span
+                            class="lang-en"><strong>Hsieh Wan-Yun</strong> NCCU Law Year 2 | NCCU Astronomy Club
+                            President | Sidewalk Astronomy Lead</span></li>
+                </ul>
+            </div>
+
+            <!-- Curriculum Section -->
+            <div class="section-block" style="margin-bottom: 2rem;">
+                <h2><span class="lang-zh">課程內容</span><span class="lang-en">Curriculum</span></h2>
+                <div class="course-item" style="margin-bottom: 1.5rem;">
+                    <h3><span class="lang-zh">Arduino 課程</span><span class="lang-en">Arduino Course</span></h3>
+                    <p>
+                        <span class="lang-zh">透過操作大氣與土壤溫濕度監測器，觀察身邊環境。學員將學習感測器原理、Arduino
+                            電路接線與基礎程式撰寫，實現資料即時顯示。從基礎入門出發，引導進入實作應用，培養動手能力與創新思維。</span>
+                        <span class="lang-en">Through operating atmospheric and soil temperature/humidity monitors,
+                            students observe their environment. They learn sensor principles, Arduino circuit wiring,
+                            and basic coding to realize real-time data display. Starting from basics
+                            to practical application, fostering hands-on ability and innovative thinking.</span>
+                    </p>
+                </div>
+                <div class="course-item" style="margin-bottom: 1.5rem;">
+                    <h3><span class="lang-zh">天文課程</span><span class="lang-en">Astronomy Course</span></h3>
+                    <p>
+                        <span
+                            class="lang-zh">舉辦於金湖國中星象館。透過天文先備課程，學員初步認識星空在不同文化中的象徵意義，結合天文與人文。同時理解望遠鏡成像物理意義，學習正確使用不同類型望遠鏡。從光學原理入手，探討焦距、放大倍率、視場範圍等，掌握基本原理。最終深入了解從入門、觀測到研究的路徑。</span>
+                        <span class="lang-en">Held at Jinhu Junior High Planetarium. Through preparatory
+                            courses, students learn the cultural significance of starry skies, combining astronomy and
+                            humanities. They understand telescope physics (optics, focal length, magnification) and
+                            learn to use different telescopes correctly. The goal is to provide a conceptual foundation
+                            for night observations.</span>
+                    </p>
+                </div>
+                <div class="course-item" style="margin-bottom: 1.5rem;">
+                    <h3><span class="lang-zh">生態課程</span><span class="lang-en">Ecology Course</span></h3>
+                    <p>
+                        <span class="lang-zh">舉辦於金門高中地科教室。金門屬島嶼生態系，本課程著重介紹當地植物分類學，佐以實際貝類的觀察紀錄，讓學生了解當地價值與環境保護重要性。</span>
+                        <span class="lang-en">Held at Kinmen High School Earth Science classroom. Focusing on Kinmen's
+                            island ecosystem and local species. Introduction to local plant taxonomy and observation of
+                            local shells.</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Starry Sky Story House Section -->
+            <div class="story-house-section"
+                style="margin: 2rem 0; padding: 2rem; background-color: var(--light-bg); border-radius: 12px; border-left: 4px solid var(--accent-color);">
+                <h2 style="color: var(--accent-color); margin-bottom: 1rem;">
+                    <span class="lang-zh">星空故事館：金門天文巡遊</span>
+                    <span class="lang-en">Starry Sky Story House: Kinmen Astronomy Tour</span>
+                </h2>
+
+                <p style="font-style: italic; color: #666; margin-bottom: 1.5rem;">
+                    <span class="lang-zh">「能和他人共享在星空下感受到的喜悅，是件很幸福的事。」</span>
+                    <span class="lang-en">"Sharing the joy felt under the starry sky with others is a truly happy
+                        thing."</span>
+                </p>
+
+                <p>
+                    <span
+                        class="lang-zh">星野的孩子團隊一直在做的事，就是將星空帶到孩子們身旁。這次，我們希望能把這份對天文的熱愛傳遞給更多人，因此誕生了金門限定的快閃活動——<strong>「星空故事館」</strong>。</span>
+                    <span class="lang-en">The Hoshiko team has always been about bringing the starry sky to children.
+                        This time, we wanted to pass this passion for astronomy to even more people, giving birth to the
+                        Kinmen-exclusive pop-up event — <strong>"Starry Sky Story House"</strong>.</span>
+                </p>
+
+                <p>
+                    <span
+                        class="lang-zh">在這場特別的巡遊中，我們邀請大家來坐坐，參與我們的<strong>路邊天文</strong>，體驗西洋星空導覽與望遠鏡觀測，並聽聽金門夜空中獨有的神明信仰故事。</span>
+                    <span class="lang-en">In this special tour, we invite everyone to sit down, join our
+                        <strong>Sidewalk Astronomy</strong>, experience western starry sky tours and telescope
+                        observations, and listen to the unique stories of deity beliefs in Kinmen's night sky.</span>
+                </p>
+
+                <p>
+                    <span
+                        class="lang-zh">更有趣的是我們的<strong>星空故事收集計畫</strong>：「帶一個故事來，換一片星空走」。只要來到我們的攤位，分享一個你與星空有關的小故事（也許是某次難忘的觀星回憶，或是參與活動的心得），並追蹤分享我們的活動，就能獲得一張金門限定的星空明信片。</span>
+                    <span class="lang-en">Even more interesting is our <strong>Starry Sky Story Collection
+                            Project</strong>: "Bring a story, leave with a starry sky". Just come to our booth, share a
+                        small story about you and the starry sky (perhaps a memorable stargazing memory or thoughts on
+                        an event), follow and share our page, and you'll receive a Kinmen-exclusive starry sky
+                        postcard.</span>
+                </p>
+
+                <p style="margin-bottom: 0;">
+                    <span class="lang-zh">期待在星空下，聆聽專屬於你的故事。</span>
+                    <span class="lang-en">We look forward to hearing your unique story under the starry sky.</span>
+                </p>
+            </div>
+
+            <div style="margin-bottom: 2rem;"></div>
+
+            <!-- Schedule Section -->
+            <div class="section-block">
+                <h2><span class="lang-zh">活動日程</span><span class="lang-en">Schedule</span></h2>
+                <ul class="schedule-list" style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 0.8rem;">
+                        <strong>6/08 18:00 - 20:30</strong> <br>
+                        <span class="lang-zh">星空故事館 @ 慈湖 (太陽、觀星導覽)</span>
+                        <span class="lang-en">Starry Sky Story House @ Cihu (Sun & Stargazing Tour)</span>
+                    </li>
+                    <li style="margin-bottom: 0.8rem;">
+                        <strong>6/09 13:00 - 17:00</strong> <br>
+                        <span class="lang-zh">探索營課程：Arduino 科學感測器實作 (城中數資班)</span>
+                        <span class="lang-en">Exploration Camp: Arduino Sensor Implementation (Jincheng JHS)</span>
+                    </li>
+                    <li style="margin-bottom: 0.8rem;">
+                        <strong>6/09 19:30 - 21:30</strong> <br>
+                        <span class="lang-zh">星空故事館 @ 金城國中天文臺 (觀星導覽)</span>
+                        <span class="lang-en">Starry Sky Story House @ Jincheng JHS Observatory (Stargazing)</span>
+                    </li>
+                    <li style="margin-bottom: 0.8rem;">
+                        <strong>6/10 16:30 - 18:00</strong> <br>
+                        <span class="lang-zh">探索營課程：天文主題課程 (觀星知識與儀器操作)</span>
+                        <span class="lang-en">Exploration Camp: Astronomy Theme (Knowledge & Instruments)</span>
+                    </li>
+                    <li style="margin-bottom: 0.8rem;">
+                        <strong>6/10 18:00 - 20:30</strong> <br>
+                        <span class="lang-zh">星空故事館 @ 金湖國中校門口 (觀星導覽)</span>
+                        <span class="lang-en">Starry Sky Story House @ Jinhu JHS Gate (Stargazing)</span>
+                    </li>
+                    <li style="margin-bottom: 0.8rem;">
+                        <strong>6/11 16:30 - 18:00</strong> <br>
+                        <span class="lang-zh">探索營課程：生態主題課程 (海岸生態與生物分類)</span>
+                        <span class="lang-en">Exploration Camp: Ecology Theme (Coastal Ecology & Taxonomy)</span>
+                    </li>
+                    <li style="margin-bottom: 0.8rem;">
+                        <strong>6/11 19:30 - 21:30</strong> <br>
+                        <span class="lang-zh">星空故事館 @ 134 高地暗空園區 (觀星導覽)</span>
+                        <span class="lang-en">Starry Sky Story House @ 134 Highland Dark Sky Park (Stargazing)</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <h3><span class="lang-zh">活動花絮</span><span class="lang-en">Gallery</span></h3>
+        <div class="gallery">
+            <img src="images/kinmen/IMG_2162.JPG" alt="Kinmen Activity Photo New" loading="lazy">
+            <img src="images/kinmen/DSC05667.jpg" alt="Kinmen Activity Photo 1" loading="lazy">
+            <img src="images/kinmen/DSC05845.jpg" alt="Kinmen Activity Photo 2" loading="lazy">
+            <img src="images/kinmen/DSC06031-2.jpg" alt="Kinmen Activity Photo 3" loading="lazy">
+            <img src="images/kinmen/IMG_0323.JPG" alt="Kinmen Activity Photo 4" loading="lazy">
+            <img src="images/kinmen/IMG_0422.JPG" alt="Kinmen Activity Photo 5" loading="lazy">
+        </div>
+
+        <a href="index.html#projects" class="back-btn">
+            <span class="lang-zh">← 返回活動列表</span>
+            <span class="lang-en">← Back to Events</span>
+        </a>
+    </div>
+
+    <!-- 頁尾區域 -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3><span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span></h3>
+                <p><span class="lang-zh">用教育連結城鄉，用自然啟發生命。</span><span class="lang-en">Connecting urban and rural areas
+                        through education, inspiring life through nature.</span></p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61575271155514"><span>FB</span></a>
+                    <a href="https://www.instagram.com/hoshiko_plan/"><span>IG</span></a>
+                    <a href="https://www.youtube.com/@Didymos65803"><span>YT</span></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3><span class="lang-zh">聯絡我們</span><span class="lang-en">Contact Us</span></h3>
+                <p><span class="lang-zh">電子郵件：</span><span class="lang-en">Email: </span>hoshikoplan@gmail.com</p>
+                <p><span class="lang-zh">地址：台北市大安區羅斯福路四段一號</span><span class="lang-en">Address: No. 1, Sec. 4, Roosevelt
+                        Rd., Da'an Dist., Taipei City</span></p>
+            </div>
+            <div class="footer-column">
+                <h3><span class="lang-zh">快速連結</span><span class="lang-en">Quick Links</span></h3>
+                <ul>
+                    <li><a href="index.html#about"><span class="lang-zh">關於我們</span><span class="lang-en">About
+                                Us</span></a></li>
+                    <li><a href="index.html#projects"><span class="lang-zh">計畫說明</span><span
+                                class="lang-en">Projects</span></a></li>
+                    <li><a href="index.html#projects"><span class="lang-zh">活動紀錄</span><span
+                                class="lang-en">Events</span></a></li>
+                    <li><a href="index.html#impact"><span class="lang-zh">影響成果</span><span
+                                class="lang-en">Impact</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 <span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span> <span
+                    class="lang-zh">版權所有</span><span class="lang-en">All Rights Reserved</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Language Toggle Logic
+        const langToggleBtn = document.getElementById('langToggle');
+
+        // Check local storage and initialize
+        const savedLang = localStorage.getItem('language');
+        if (savedLang === 'en') {
+            document.body.classList.add('english-mode');
+        }
+
+        langToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('english-mode');
+
+            if (document.body.classList.contains('english-mode')) {
+                localStorage.setItem('language', 'en');
+            } else {
+                localStorage.setItem('language', 'zh');
+            }
+        });
+
+        // 漢堡選單控制
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+    </script>
+</body>
+
+</html>

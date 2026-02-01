@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,24 +15,24 @@
             --text-color: #333;
             --light-bg: #f5f5f5;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: "微軟正黑體", "Noto Sans TC", sans-serif;
         }
-        
+
         body {
             color: var(--text-color);
             line-height: 1.6;
         }
-        
+
         a {
             text-decoration: none;
             color: var(--accent-color);
         }
-        
+
         /* 頁首樣式 */
         header {
             background-color: var(--primary-color);
@@ -41,7 +42,7 @@
             top: 0;
             z-index: 100;
         }
-        
+
         nav {
             display: flex;
             justify-content: space-between;
@@ -49,33 +50,33 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
         }
-        
+
         .nav-links {
             display: flex;
             list-style: none;
         }
-        
+
         .nav-links li {
             margin-left: 1.5rem;
         }
-        
+
         .nav-links a {
             color: white;
             font-weight: 500;
             padding: 0.5rem;
             transition: all 0.3s ease;
         }
-        
+
         .nav-links a:hover {
             background-color: rgba(255, 255, 255, 0.2);
             border-radius: 4px;
         }
-        
+
         /* 首頁英雄區塊 - 修正背景圖片 */
         .hero {
             background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hoshiko.JPG');
@@ -90,18 +91,18 @@
             color: white;
             padding: 2rem;
         }
-        
+
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
-        
+
         .hero p {
             font-size: 1.2rem;
             max-width: 800px;
             margin-bottom: 2rem;
         }
-        
+
         .btn {
             display: inline-block;
             background-color: var(--secondary-color);
@@ -111,26 +112,26 @@
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
-        
+
         .btn:hover {
             background-color: var(--primary-color);
         }
-        
+
         /* 內容區塊通用樣式 */
         section {
             padding: 4rem 2rem;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
         }
-        
+
         .section-title h2 {
             font-size: 2rem;
             color: var(--primary-color);
@@ -138,7 +139,7 @@
             display: inline-block;
             padding-bottom: 0.5rem;
         }
-        
+
         .section-title h2::after {
             content: '';
             position: absolute;
@@ -149,52 +150,52 @@
             height: 3px;
             background-color: var(--secondary-color);
         }
-        
+
         /* 核心理念區塊 */
         .mission {
             background-color: var(--light-bg);
         }
-        
+
         .mission-content {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .mission-text {
             flex: 1;
             min-width: 300px;
             padding: 2rem;
         }
-        
+
         .mission-image {
             flex: 1;
             min-width: 300px;
             text-align: center;
         }
-        
+
         .mission-image img {
             max-width: 100%;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         /* 影響力數據區塊 */
         .impact {
             background-color: var(--primary-color);
             color: white;
             text-align: center;
         }
-        
+
         .impact .section-title h2 {
             color: white;
         }
-        
+
         .impact .section-title h2::after {
             background-color: white;
         }
-        
+
         .stats-container {
             display: flex;
             flex-wrap: wrap;
@@ -202,7 +203,7 @@
             margin: 0 auto;
             max-width: 1000px;
         }
-        
+
         .stat-item {
             flex: 1;
             min-width: 200px;
@@ -211,53 +212,53 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
         }
-        
+
         .stat-item .number {
             font-size: 3rem;
             font-weight: bold;
             margin-bottom: 0.5rem;
         }
-        
+
         /* 最新動態區塊 */
         .news {
             background-color: white;
         }
-        
+
         .news-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
         }
-        
+
         .news-card {
             border: 1px solid #eee;
             border-radius: 8px;
             overflow: hidden;
         }
-        
+
         .news-image {
             height: 200px;
             background-size: cover;
             background-position: center;
         }
-        
+
         .news-content {
             padding: 1.5rem;
         }
-        
+
         .news-date {
             color: #888;
             font-size: 0.9rem;
             margin-bottom: 0.5rem;
         }
-        
+
         /* 頁尾樣式 */
         footer {
             background-color: #333;
             color: white;
             padding: 3rem 2rem;
         }
-        
+
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -265,19 +266,19 @@
             flex-wrap: wrap;
             justify-content: space-between;
         }
-        
+
         .footer-column {
             flex: 1;
             min-width: 250px;
             margin-bottom: 2rem;
         }
-        
+
         .footer-column h3 {
             margin-bottom: 1rem;
             position: relative;
             padding-bottom: 0.5rem;
         }
-        
+
         .footer-column h3::after {
             content: '';
             position: absolute;
@@ -287,30 +288,30 @@
             height: 2px;
             background-color: var(--secondary-color);
         }
-        
+
         .footer-column ul {
             list-style: none;
         }
-        
+
         .footer-column li {
             margin-bottom: 0.5rem;
         }
-        
+
         .footer-column a {
             color: #ccc;
             transition: color 0.3s ease;
         }
-        
+
         .footer-column a:hover {
             color: white;
         }
-        
+
         .social-links {
             display: flex;
             gap: 1rem;
             margin-top: 1rem;
         }
-        
+
         .social-links a {
             display: inline-block;
             width: 36px;
@@ -322,43 +323,44 @@
             justify-content: center;
             transition: background-color 0.3s ease;
         }
-        
+
         .social-links a:hover {
             background-color: var(--secondary-color);
         }
-        
+
         .copyright {
             text-align: center;
             padding-top: 2rem;
             margin-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         /* 響應式設計 */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-            
+
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             .hero p {
                 font-size: 1rem;
             }
-            
+
             .mission-content {
                 flex-direction: column;
             }
-            
-            .mission-text, .mission-image {
+
+            .mission-text,
+            .mission-image {
                 min-width: 100%;
             }
         }
-        
+
         /* 以下是互動按鈕樣式 */
-        
+
         /* 返回頂部按鈕 */
         .back-to-top {
             position: fixed;
@@ -380,17 +382,17 @@
             visibility: hidden;
             z-index: 1000;
         }
-        
+
         .back-to-top.show {
             opacity: 1;
             visibility: visible;
         }
-        
+
         .back-to-top:hover {
             background-color: var(--secondary-color);
             transform: translateY(-3px);
         }
-        
+
         /* 漢堡選單按鈕 */
         .menu-toggle {
             display: none;
@@ -400,7 +402,7 @@
             height: 20px;
             cursor: pointer;
         }
-        
+
         .menu-toggle span {
             height: 3px;
             width: 100%;
@@ -408,12 +410,12 @@
             border-radius: 3px;
             transition: all 0.3s ease;
         }
-        
+
         @media (max-width: 768px) {
             .menu-toggle {
                 display: flex;
             }
-            
+
             .nav-links {
                 position: fixed;
                 top: 70px;
@@ -427,33 +429,33 @@
                 transition: height 0.3s ease;
                 z-index: 999;
             }
-            
+
             .nav-links.active {
                 height: 300px;
                 padding: 1rem 0;
             }
-            
+
             .nav-links li {
                 margin: 1rem 0;
             }
-            
+
             body.menu-open {
                 overflow: hidden;
             }
-            
+
             .menu-toggle.active span:nth-child(1) {
                 transform: translateY(8px) rotate(45deg);
             }
-            
+
             .menu-toggle.active span:nth-child(2) {
                 opacity: 0;
             }
-            
+
             .menu-toggle.active span:nth-child(3) {
                 transform: translateY(-8px) rotate(-45deg);
             }
         }
-        
+
         /* 修改後的輪播圖樣式 */
         .carousel {
             position: relative;
@@ -462,19 +464,20 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        
+
         .carousel-inner {
             display: flex;
             transition: transform 0.4s ease;
         }
-        
+
         .carousel-item {
             min-width: 100%;
             position: relative;
-            cursor: pointer; /* 添加指針樣式表示可點擊 */
+            cursor: pointer;
+            /* 添加指針樣式表示可點擊 */
             overflow: hidden;
         }
-        
+
         .carousel-item::before {
             content: '點擊查看詳情';
             position: absolute;
@@ -489,22 +492,22 @@
             transition: opacity 0.3s ease;
             z-index: 3;
         }
-        
+
         .carousel-item:hover::before {
             opacity: 1;
         }
-        
+
         .carousel-item img {
             width: 100%;
             height: 400px;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
-        
+
         .carousel-item:hover img {
             transform: scale(1.05);
         }
-        
+
         .carousel-caption {
             position: absolute;
             bottom: 0;
@@ -514,7 +517,7 @@
             color: white;
             padding: 1rem;
         }
-        
+
         .carousel-control {
             position: absolute;
             top: 50%;
@@ -532,19 +535,19 @@
             transition: all 0.3s ease;
             z-index: 4;
         }
-        
+
         .carousel-control:hover {
             background-color: var(--primary-color);
         }
-        
+
         .carousel-prev {
             left: 20px;
         }
-        
+
         .carousel-next {
             right: 20px;
         }
-        
+
         .carousel-indicators {
             position: absolute;
             bottom: 20px;
@@ -554,7 +557,7 @@
             gap: 10px;
             z-index: 4;
         }
-        
+
         .carousel-indicator {
             width: 12px;
             height: 12px;
@@ -563,174 +566,117 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .carousel-indicator.active {
             background-color: white;
         }
-        
-        /* 活動詳情彈窗樣式 */
-        .activity-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1001;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
+
+        /* Activity Modal Styles Removed */
+
+
+        /* Activity Modal Internal Styles Removed */
+
+        /* Language Toggle utilities */
+        .lang-en {
+            display: none;
         }
-        
-        .activity-modal.show {
-            opacity: 1;
-            visibility: visible;
+
+        body.english-mode .lang-zh {
+            display: none;
         }
-        
-        .activity-modal-content {
-            background-color: white;
-            width: 90%;
-            max-width: 900px;
-            border-radius: 8px;
-            overflow: hidden;
-            max-height: 90vh;
-            display: flex;
-            flex-direction: column;
+
+        body.english-mode .lang-en {
+            display: inline-block;
         }
-        
-        .activity-modal-header {
-            background-color: var(--primary-color);
+
+        /* Toggle Button Style */
+        .lang-toggle {
+            background: transparent;
+            border: 1px solid white;
             color: white;
-            padding: 1.5rem;
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .activity-modal-close {
-            font-size: 1.5rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
             cursor: pointer;
-            color: white;
-            transition: all 0.3s ease;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        .activity-modal-close:hover {
-            background-color: rgba(255, 255, 255, 0.4);
-            transform: rotate(90deg);
-        }
-        
-        .activity-modal-body {
-            padding: 2rem;
-            overflow-y: auto;
-            flex-grow: 1;
-        }
-        
-        .activity-modal-image {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 6px;
-            margin-bottom: 1.5rem;
-        }
-        
-        .activity-modal-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .activity-info-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background-color: var(--light-bg);
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
             font-size: 0.9rem;
+            transition: all 0.3s ease;
+            margin-left: 1rem;
+            font-family: inherit;
         }
-        
-        .activity-modal-description {
-            line-height: 1.8;
-        }
-        
-        .activity-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .activity-gallery img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .activity-gallery img:hover {
-            transform: scale(1.05);
+
+        .lang-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
+
 <body>
     <!-- 頁首區域 -->
     <header>
         <nav>
-            <div class="logo">星野的孩子</div>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">首頁</a></li>
-                <li><a href="#about">關於我們</a></li>
-                <li><a href="#projects">計畫說明</a></li>
-                <li><a href="#projects">活動紀錄</a></li>
-                <li><a href="#impact">影響成果</a></li>
-                <li><a href="#contact">聯絡我們</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <div class="logo"><span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span></div>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#"><span class="lang-zh">首頁</span><span class="lang-en">Home</span></a></li>
+                    <li><a href="#about"><span class="lang-zh">關於我們</span><span class="lang-en">About Us</span></a></li>
+                    <li><a href="#projects"><span class="lang-zh">計畫說明</span><span class="lang-en">Projects</span></a>
+                    </li>
+                    <li><a href="#projects"><span class="lang-zh">活動紀錄</span><span class="lang-en">Events</span></a>
+                    </li>
+                    <li><a href="#impact"><span class="lang-zh">影響成果</span><span class="lang-en">Impact</span></a></li>
+                    <li><a href="#contact"><span class="lang-zh">聯絡我們</span><span class="lang-en">Contact</span></a>
+                    </li>
+                    <li><button class="lang-toggle" id="langToggle">EN / 中</button></li>
+                </ul>
+            </nav>
     </header>
-    
+
     <!-- 英雄區域 - 已修正，移除了img標籤，使用背景圖片 -->
     <section class="hero">
-        <h1>用天文與自然教育點亮偏鄉</h1>
-        <p>我們是一群關心偏鄉教育的大學生，致力於將豐富的天文與STEM領域知識和體驗帶給小朋友，啟發他們對自然的熱愛與家鄉的認同。</p>
-        <a href="#about" class="btn">了解更多</a>
+        <h1><span class="lang-zh">用天文與自然教育點亮偏鄉</span><span class="lang-en">Illuminating Rural Areas with Astronomy and
+                Nature Education</span></h1>
+        <p><span class="lang-zh">我們是一群關心偏鄉教育的大學生，致力於將豐富的天文與STEM領域知識和體驗帶給小朋友，啟發他們對自然的熱愛與家鄉的認同。</span><span
+                class="lang-en">We are a team of university students dedicated to bringing astronomy and STEM
+                experiences to children in rural areas, inspiring a love for nature and connection to their
+                homeland.</span></p>
+        <a href="#about" class="btn"><span class="lang-zh">了解更多</span><span class="lang-en">Learn More</span></a>
     </section>
-    
+
     <!-- 核心理念區域 -->
     <section id="about" class="mission">
         <div class="container">
             <div class="section-title">
-                <h2>我們的理念</h2>
+                <h2><span class="lang-zh">我們的理念</span><span class="lang-en">Our Philosophy</span></h2>
             </div>
             <div class="mission-content">
                 <div class="mission-text">
-                    <h2>點亮台灣與世界鄉野的星空</h2>
-                    <p>自然是最好的教室，鄉野中仍舊保存著原始的自然環境與星空，卻未能有人帶領小朋友抬頭仰望。我們希望透過設計富有在地特色的天文和STEM課程，達成以下目標：</p>
+                    <h2><span class="lang-zh">點亮台灣與世界鄉野的星空</span><span class="lang-en">Lighting up the Starry Skies of
+                            Rural Taiwan and Beyond</span></h2>
+                    <p><span
+                            class="lang-zh">自然是最好的教室，鄉野中仍舊保存著原始的自然環境與星空，卻未能有人帶領小朋友抬頭仰望。我們希望透過設計富有在地特色的天文和STEM課程，達成以下目標：</span><span
+                            class="lang-en">Nature is the best classroom. Rural areas still preserve pristine natural
+                            environments and starry skies, yet there are few to guide children to look up. We hope to
+                            achieve the following goals by designing astronomy and STEM curricula with local
+                            characteristics:</span></p>
                     <ul>
-                        <li>啟發小朋友對自然科學的熱愛與好奇</li>
-                        <li>培養小朋友的環境保護意識與行動力</li>
-                        <li>增強對家鄉土地的認同與歸屬</li>
-                        <li>提供多元學習機會，彌補教育資源落差</li>
+                        <li><span class="lang-zh">啟發小朋友對自然科學的熱愛與好奇</span><span class="lang-en">Inspire children's love
+                                and curiosity for natural science</span></li>
+                        <li><span class="lang-zh">培養小朋友的環境保護意識與行動力</span><span class="lang-en">Cultivate environmental
+                                awareness and action</span></li>
+                        <li><span class="lang-zh">增強對家鄉土地的認同與歸屬</span><span class="lang-en">Enhance identity and
+                                belonging to their homeland</span></li>
+                        <li><span class="lang-zh">提供多元學習機會，彌補教育資源落差</span><span class="lang-en">Provide diverse learning
+                                opportunities to bridge the educational resource gap</span></li>
                     </ul>
-                    <p>「星野的孩子」團隊的每一場活動，不只是一場科學營隊，更希望能透過在地化的課程設計與長期合作，在偏鄉地區種下自然教育的種子，成長為星野的孩子。</p>
+                    <p><span
+                            class="lang-zh">「星野的孩子」團隊的每一場活動，不只是一場科學營隊，更希望能透過在地化的課程設計與長期合作，在偏鄉地區種下自然教育的種子，成長為星野的孩子。</span><span
+                            class="lang-en">Every event by the "Hoshiko" team is more than just a science camp. We hope
+                            to plant the seeds of nature education in rural areas through localized curriculum design
+                            and long-term cooperation, nurturing them to become Children of the Starfield.</span></p>
                 </div>
                 <div class="mission-image">
                     <img src="images/laser.jpg" alt="自然教育活動照片">
@@ -738,36 +684,56 @@
             </div>
         </div>
     </section>
-    
+
     <!-- 活動照片輪播 - 改為可點擊查看詳情 -->
     <section id="projects">
         <div class="container">
             <div class="section-title">
-                <h2>活動紀錄</h2>
+                <h2><span class="lang-zh">活動紀錄</span><span class="lang-en">Our Journey</span></h2>
             </div>
-            
+
             <div class="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item" data-activity="義盛國小">
-                        <img src="images/IMG_6805.JPG" alt="活動照片1" loading="lazy">
-                        <div class="carousel-caption">
-                            <h3>義盛國小</h3>
-                            <p>帶領小朋友認識自然，初探深空與認識星座</p>
-                        </div>
+                    <div class="carousel-item">
+                        <a href="activity-yisheng.html" target="_blank" class="activity-link">
+                            <img src="images/IMG_6805.JPG" alt="活動照片1" loading="lazy">
+                            <div class="carousel-caption">
+                                <h3><span class="lang-zh">義盛國小</span><span class="lang-en">Yisheng Elementary
+                                        School</span>
+                                </h3>
+                                <p><span class="lang-zh">帶領小朋友認識自然，初探深空與認識星座</span><span class="lang-en">Guiding
+                                        children to
+                                        explore nature, deep space, and constellations</span></p>
+                            </div>
+                        </a>
                     </div>
-                    <div class="carousel-item" data-activity="金門">
-                        <img src="images/C2023A3.jpg" alt="活動照片2" loading="lazy">
-                        <div class="carousel-caption">
-                            <h3>金門（籌劃中）</h3>
-                            <p>透過STEM互動實驗培養科學素養，結合當地文化認識星空</p>
-                        </div>
+                    <div class="carousel-item">
+                        <a href="activity-kinmen.html" target="_blank" class="activity-link">
+                            <img src="images/C2023A3.jpg" alt="活動照片2" loading="lazy">
+                            <div class="carousel-caption">
+                                <h3><span class="lang-zh">金門（籌劃中）</span><span class="lang-en">Kinmen (Planning)</span>
+                                </h3>
+                                <p><span class="lang-zh">透過STEM互動實驗培養科學素養，結合當地文化認識星空</span><span
+                                        class="lang-en">Cultivating
+                                        scientific literacy through interactive STEM experiments, connecting local
+                                        culture
+                                        with the starry sky</span></p>
+                            </div>
+                        </a>
                     </div>
-                    <div class="carousel-item" data-activity="帛琉">
-                        <img src="images/Milk.jpeg" alt="活動照片3" loading="lazy">
-                        <div class="carousel-caption">
-                            <h3>帛琉（籌劃中）</h3>
-                            <p>走出台灣以科學交流，探索在地生態，連結人與自然</p>
-                        </div>
+                    <div class="carousel-item">
+                        <a href="activity-palau.html" target="_blank" class="activity-link">
+                            <img src="images/Milk.jpeg" alt="活動照片3" loading="lazy">
+                            <div class="carousel-caption">
+                                <h3><span class="lang-zh">帛琉（籌劃中）</span><span class="lang-en">Palau (Planning)</span>
+                                </h3>
+                                <p><span class="lang-zh">走出台灣以科學交流，探索在地生態，連結人與自然</span><span
+                                        class="lang-en">International
+                                        scientific exchange, exploring local ecology, connecting people and
+                                        nature</span>
+                                </p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="carousel-control carousel-prev">&lt;</div>
@@ -780,40 +746,45 @@
             </div>
         </div>
     </section>
-    
+
     <!-- 影響力數據區域 -->
     <section id="impact" class="impact">
         <div class="container">
             <div class="section-title">
-                <h2>我們的影響力</h2>
+                <h2><span class="lang-zh">我們的影響力</span><span class="lang-en">Impact</span></h2>
             </div>
             <div class="stats-container">
                 <div class="stat-item">
                     <div class="number">1+</div>
-                    <div class="stat-title">合作學校</div>
+                    <div class="stat-title"><span class="lang-zh">合作學校</span><span class="lang-en">Partner
+                            Schools</span></div>
                 </div>
                 <div class="stat-item">
                     <div class="number">10+</div>
-                    <div class="stat-title">受益學生</div>
+                    <div class="stat-title"><span class="lang-zh">受益學生</span><span class="lang-en">Students
+                            Reached</span></div>
                 </div>
                 <div class="stat-item">
                     <div class="number">15+</div>
-                    <div class="stat-title">團隊成員</div>
+                    <div class="stat-title"><span class="lang-zh">團隊成員</span><span class="lang-en">Team Members</span>
+                    </div>
                 </div>
                 <div class="stat-item">
                     <div class="number">10+</div>
-                    <div class="stat-title">課程方案</div>
+                    <div class="stat-title"><span class="lang-zh">課程方案</span><span class="lang-en">Curriculum
+                            Modules</span></div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- 頁尾區域 -->
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-column">
-                <h3>星野的孩子</h3>
-                <p>用教育連結城鄉，用自然啟發生命。</p>
+                <h3><span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span></h3>
+                <p><span class="lang-zh">用教育連結城鄉，用自然啟發生命。</span><span class="lang-en">Connecting urban and rural areas
+                        through education, inspiring life through nature.</span></p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/profile.php?id=61575271155514"><span>FB</span></a>
                     <a href="https://www.instagram.com/hoshiko_plan/"><span>IG</span></a>
@@ -821,66 +792,39 @@
                 </div>
             </div>
             <div class="footer-column">
-                <h3>聯絡我們</h3>
-                <p>電子郵件：hoshikoplan@gmail.com</p>
-                <p>地址：台北市大安區羅斯福路四段一號</p>
+                <h3><span class="lang-zh">聯絡我們</span><span class="lang-en">Contact Us</span></h3>
+                <p><span class="lang-zh">電子郵件：</span><span class="lang-en">Email: </span>hoshikoplan@gmail.com</p>
+                <p><span class="lang-zh">地址：台北市大安區羅斯福路四段一號</span><span class="lang-en">Address: No. 1, Sec. 4, Roosevelt
+                        Rd., Da'an Dist., Taipei City</span></p>
             </div>
             <div class="footer-column">
-                <h3>快速連結</h3>
+                <h3><span class="lang-zh">快速連結</span><span class="lang-en">Quick Links</span></h3>
                 <ul>
-                    <li><a href="#about">關於我們</a></li>
-                    <li><a href="#projects">計畫說明</a></li>
-                    <li><a href="#projects">活動紀錄</a></li>
-                    <li><a href="#impact">影響成果</a></li>
+                    <li><a href="#about"><span class="lang-zh">關於我們</span><span class="lang-en">About Us</span></a></li>
+                    <li><a href="#projects"><span class="lang-zh">計畫說明</span><span class="lang-en">Projects</span></a>
+                    </li>
+                    <li><a href="#projects"><span class="lang-zh">活動紀錄</span><span class="lang-en">Events</span></a>
+                    </li>
+                    <li><a href="#impact"><span class="lang-zh">影響成果</span><span class="lang-en">Impact</span></a></li>
                 </ul>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 星野的孩子 版權所有</p>
+            <p>&copy; 2025 <span class="lang-zh">星野的孩子</span><span class="lang-en">Hoshiko</span> <span
+                    class="lang-zh">版權所有</span><span class="lang-en">All Rights Reserved</span></p>
         </div>
     </footer>
-    
+
     <!-- 返回頂部按鈕 -->
     <div class="back-to-top">↑</div>
-    
-    <!-- 活動詳情彈窗 -->
-    <div class="activity-modal" id="activityModal">
-        <div class="activity-modal-content">
-            <div class="activity-modal-header">
-                <h2 id="activityTitle">活動標題</h2>
-                <div class="activity-modal-close">&times;</div>
-            </div>
-            <div class="activity-modal-body">
-                <img id="activityImage" src="" alt="活動照片" class="activity-modal-image">
-                <div class="activity-modal-info">
-                    <div class="activity-info-item">
-                        <span>日期：</span>
-                        <span id="activityDate">2024年3月</span>
-                    </div>
-                    <div class="activity-info-item">
-                        <span>地點：</span>
-                        <span id="activityLocation">花蓮縣</span>
-                    </div>
-                    <div class="activity-info-item">
-                        <span>參與人數：</span>
-                        <span id="activityParticipants">20人</span>
-                    </div>
-                </div>
-                <div class="activity-modal-description" id="activityDescription">
-                    <!-- 活動詳細描述將通過JavaScript動態載入 -->
-                </div>
-                <div class="activity-gallery" id="activityGallery">
-                    <!-- 更多活動照片將通過JavaScript動態載入 -->
-                </div>
-            </div>
-        </div>
-    </div>
-    
+
+    <!-- Activity Modal Removed -->
+
     <!-- JavaScript -->
     <script>
         // 返回頂部按鈕
         const backToTopBtn = document.querySelector('.back-to-top');
-        
+
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 backToTopBtn.classList.add('show');
@@ -888,25 +832,25 @@
                 backToTopBtn.classList.remove('show');
             }
         });
-        
+
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
-        
+
         // 漢堡選單控制
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
         const body = document.body;
-        
+
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
             body.classList.toggle('menu-open');
         });
-        
+
         // 確保點擊導航鏈接後關閉菜單
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
@@ -917,7 +861,7 @@
                 }
             });
         });
-        
+
         // 輪播圖控制
         const carousel = document.querySelector('.carousel-inner');
         const carouselItems = document.querySelectorAll('.carousel-item');
@@ -926,7 +870,7 @@
         const indicators = document.querySelectorAll('.carousel-indicator');
         let currentIndex = 0;
         let isAnimating = false;
-        
+
         // 更新輪播位置和指示器狀態
         function updateCarousel() {
             isAnimating = true;
@@ -938,58 +882,68 @@
                     indicator.classList.remove('active');
                 }
             });
-            
+
             // 動畫完成後解除鎖定
             setTimeout(() => {
                 isAnimating = false;
             }, 400);
         }
-        
+
         // 上一張
         prevBtn.addEventListener('click', (e) => {
             e.stopPropagation(); // 阻止事件冒泡
             if (isAnimating) return;
-            
+
             currentIndex = (currentIndex === 0) ? carouselItems.length - 1 : currentIndex - 1;
             updateCarousel();
         });
-        
+
         // 下一張
         nextBtn.addEventListener('click', (e) => {
             e.stopPropagation(); // 阻止事件冒泡
             if (isAnimating) return;
-            
+
             currentIndex = (currentIndex === carouselItems.length - 1) ? 0 : currentIndex + 1;
             updateCarousel();
         });
-        
+
         // 點擊指示器切換
         indicators.forEach((indicator, index) => {
             indicator.addEventListener('click', (e) => {
                 e.stopPropagation(); // 阻止事件冒泡
                 if (isAnimating) return;
-                
+
                 currentIndex = index;
                 updateCarousel();
             });
         });
-        
+
         // 自動輪播
         let autoplayInterval = setInterval(() => {
-            if (!document.querySelector('.activity-modal.show')) { // 當彈窗關閉時才自動播放
+            currentIndex = (currentIndex === carouselItems.length - 1) ? 0 : currentIndex + 1;
+            updateCarousel();
+        }, 5000);
+
+        // 滑鼠懸停時暫停輪播
+        carousel.parentElement.addEventListener('mouseenter', () => {
+            clearInterval(autoplayInterval);
+        });
+
+        carousel.parentElement.addEventListener('mouseleave', () => {
+            autoplayInterval = setInterval(() => {
                 currentIndex = (currentIndex === carouselItems.length - 1) ? 0 : currentIndex + 1;
                 updateCarousel();
-            }
-        }, 5000);
-        
+            }, 5000);
+        });
+
         // 平滑滾動
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
+
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
@@ -999,143 +953,29 @@
                 }
             });
         });
-        
-        // 活動詳情數據
-        const activityData = {
-            '義盛國小': {
-                title: '義盛國小天文與自然科學營',
-                date: '2024年06月28日 - 06月30日',
-                location: '桃園市復興區義盛國小',
-                participants: '13名小朋友',
-                image: 'images/IMG_6805.JPG',
-                description: `
-                    <p>我們在桃園市復興區義盛國小舉辦了為期三天的天文與自然科學營隊，這是「星野的孩子」團隊首次舉辦的活動。</p>
-                    <p>我們帶領小朋友認識基本的天文知識，包括星座辨識、太陽故事、實際觀測等。通過望遠鏡觀測和互動式的天文學習，孩子們對天文產生了濃厚的興趣。</p>
-                    <p>我們設計了多個生態與環境的課程與實驗，讓孩子們動手操作，了解火山的成因。並透過實地踏查學校生態，讓小朋友能更深入地了解生活環境。</p>
-                    <p>晚上的觀星活動，遠離城市光害的山區提供了絕佳的觀星條件。孩子們第一次透過專業天文望遠鏡看到深空天體與行星，一起認識星座，驚嘆連連。</p>
-                    <p>這次活動不僅讓孩子們學習到了天文知識，更重要的是激發了他們對自然科學的熱情與好奇心。我們也從這次經驗中學習，為未來的活動做更好的準備。</p>
-                    <p>本次活動感謝臺大教學發展中心「小田野計畫」資助，「鴻宇光學」提供儀器與贈送。</p>
-                `,
-                gallery: [
-                    'images/IMG_6805.JPG',
-                    'images/laser.jpg'
-                ]
-            },
-            '金門': {
-                title: '金門天文交流計劃（籌劃中）',
-                date: '預計2025年6月',
-                location: '金門縣',
-                participants: '預計40名學生',
-                image: 'images/C2023A3.jpg',
-                description: `
-                    <p>「金門天文跨海計畫」是我們正在籌劃的交流活動，預計於2025年6月實施。這個計畫希望把天文與STEM領域實作課程帶到離島地區，讓金門的學生能接觸科學的有趣。</p>
-                    <p>本計畫特色在於結合金門當地歷史文化與天文知識，設計出具有在地特色的教學活動。例如，將傳統的戰地文化和中國文化結合星空導覽，設計更在地化的天。文學。</p>
-                    <p>我們計劃在金門進行四天活動，包括：</p>
-                    <ul>
-                        <li>水火箭與Tracker實作</li>
-                        <li>STEM 跨領域教學</li>
-                        <li>環島路邊天文</li>
-                    </ul>
-                    <p>目前我們正在進行前期籌備工作，包括與當地教育單位聯繫、教學內容設計、教材準備等。我們也正在尋找合作夥伴與贊助單位，希望能為這個項目提供更豐富的資源。</p>
-                    <p>如果您有興趣了解更多，歡迎與我們聯繫！</p>
-                `,
-                gallery: [
-                    'images/C2023A3.jpg'
-                ]
-            },
-            '帛琉': {
-                title: '帛琉星空交流計畫（籌劃中）',
-                date: '預計2026年2月',
-                location: '帛琉共和國',
-                participants: '預計30名學生',
-                image: 'images/Milk.jpeg',
-                description: `
-                    <p>「帛琉星空交流計畫」是我們規劃中的國際教育合作項目，預計在2026年2月進行。這是「星野的孩子」首次嘗試的跨國教育交流活動。</p>
-                    <p>帛琉擁有極低的光害和絕佳的天文觀測條件，是南半球觀星的理想地點。同時，帛琉的自然保育意識和文化特色，也為我們的天文與STEM領域教育提供了絕佳的地點。</p>
-                    <p>此計畫的主要目標是：</p>
-                    <ul>
-                        <li>透過天文建立台灣與帛琉學生間的交流平台</li>
-                        <li>結合天文觀測與自然生態教育，發展跨領域學習模式</li>
-                        <li>記錄並比較不同地理位置的星空特色</li>
-                        <li>STEM 跨領域教學</li>
-                    </ul>
-                    <p>我們計畫與當地學校合作，共同開發適合帛琉環境的自然科學教育課程。</p>
-                    <p>目前正在申請相關的國際合作計畫和尋找贊助單位。如果您對這個計畫有興趣或能提供協助，歡迎與我們聯繫！</p>
-                `,
-                gallery: [
-                    'images/Milk.jpeg'
-                ]
-            }
-        };
-        
-        // 活動詳情彈窗控制
-        const activityModal = document.getElementById('activityModal');
-        const activityTitle = document.getElementById('activityTitle');
-        const activityDate = document.getElementById('activityDate');
-        const activityLocation = document.getElementById('activityLocation');
-        const activityParticipants = document.getElementById('activityParticipants');
-        const activityImage = document.getElementById('activityImage');
-        const activityDescription = document.getElementById('activityDescription');
-        const activityGallery = document.getElementById('activityGallery');
-        const modalClose = document.querySelector('.activity-modal-close');
-        
-        // 點擊活動卡片打開詳情
-        carouselItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const activityKey = item.getAttribute('data-activity');
-                const activity = activityData[activityKey];
-                
-                // 填充彈窗內容
-                activityTitle.textContent = activity.title;
-                activityDate.textContent = activity.date;
-                activityLocation.textContent = activity.location;
-                activityParticipants.textContent = activity.participants;
-                activityImage.src = activity.image;
-                activityImage.alt = activity.title;
-                activityDescription.innerHTML = activity.description;
-                
-                // 填充圖庫
-                activityGallery.innerHTML = '';
-                activity.gallery.forEach(imgSrc => {
-                    const img = document.createElement('img');
-                    img.src = imgSrc;
-                    img.alt = activity.title;
-                    img.loading = 'lazy';
-                    activityGallery.appendChild(img);
-                });
-                
-                // 顯示彈窗
-                activityModal.classList.add('show');
-                document.body.style.overflow = 'hidden'; // 防止背景滾動
-                clearInterval(autoplayInterval); // 暫停自動輪播
-            });
-        });
-        
-        // 關閉彈窗
-        modalClose.addEventListener('click', () => {
-            activityModal.classList.remove('show');
-            document.body.style.overflow = 'auto'; // 恢復背景滾動
-            
-            // 恢復自動輪播
-            autoplayInterval = setInterval(() => {
-                currentIndex = (currentIndex === carouselItems.length - 1) ? 0 : currentIndex + 1;
-                updateCarousel();
-            }, 5000);
-        });
-        
-        // 點擊彈窗背景關閉
-        activityModal.addEventListener('click', (e) => {
-            if (e.target === activityModal) {
-                activityModal.classList.remove('show');
-                document.body.style.overflow = 'auto';
-                
-                // 恢復自動輪播
-                autoplayInterval = setInterval(() => {
-                    currentIndex = (currentIndex === carouselItems.length - 1) ? 0 : currentIndex + 1;
-                    updateCarousel();
-                }, 5000);
+
+        // Activity Data and Modal Logic Removed - Replaced with separate pages
+
+
+        // Language Toggle Logic
+        const langToggleBtn = document.getElementById('langToggle');
+
+        // Check local storage and initialize
+        const savedLang = localStorage.getItem('language');
+        if (savedLang === 'en') {
+            document.body.classList.add('english-mode');
+        }
+
+        langToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('english-mode');
+
+            if (document.body.classList.contains('english-mode')) {
+                localStorage.setItem('language', 'en');
+            } else {
+                localStorage.setItem('language', 'zh');
             }
         });
     </script>
 </body>
+
 </html>
