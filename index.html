@@ -337,9 +337,7 @@
 
         /* 響應式設計 */
         @media (max-width: 768px) {
-            .nav-links {
-                /* display: none; Removed to avoid conflict with menu toggle logic */
-            }
+            /* .nav-links style removed to avoid conflict */
 
             .hero h1 {
                 font-size: 2rem;
@@ -463,6 +461,31 @@
 
             .menu-toggle.active span:nth-child(3) {
                 transform: translateY(-8px) rotate(-45deg);
+            }
+
+            /* 手機版輪播圖優化 */
+            .carousel-item img {
+                height: 300px;
+            }
+
+            .carousel-caption {
+                padding-bottom: 3rem;
+                /* 為圓點留出空間 */
+            }
+
+            .carousel-caption h3 {
+                font-size: 1.2rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .carousel-caption p {
+                font-size: 0.9rem;
+                margin-bottom: 0;
+                line-height: 1.3;
+            }
+
+            .carousel-indicators {
+                bottom: 10px;
             }
         }
 
@@ -674,10 +697,9 @@
                         <span class="lang-en">Hoshiko - Kinmen Astronomy Exchange Program Officially Launched!</span>
                     </h3>
                     <p style="margin-bottom: 1.5rem;">
-                        <span
-                            class="lang-zh">我們很高興地宣布，2025年度的金門天文交流計劃將於6月展開。我們將與當地的多所學校合作，帶來一系列精彩的天文觀測與科學實作課程。詳情請見活動頁面。</span>
-                        <span class="lang-en">We are thrilled to announce that the 2025 Kinmen Astronomy Exchange
-                            Program will launch in June. We will collaborate with local schools and communities to bring
+                        <span class="lang-zh">2025年度的金門天文交流計劃將於6月展開。我們將與當地的多所學校合作，帶來一系列精彩的天文觀測與科學實作課程。詳情請見活動頁面。</span>
+                        <span class="lang-en">The 2025 Kinmen Astronomy Exchange Program will launch in June. We will
+                            collaborate with local schools and communities to bring
                             a series of exciting astronomy observation and science workshops. See the event page for
                             details.</span>
                     </p>
