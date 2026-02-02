@@ -338,7 +338,7 @@
         /* 響應式設計 */
         @media (max-width: 768px) {
             .nav-links {
-                display: none;
+                /* display: none; Removed to avoid conflict with menu toggle logic */
             }
 
             .hero h1 {
@@ -417,6 +417,8 @@
             }
 
             .nav-links {
+                display: flex;
+                /* Ensure it overrides any previous display: none */
                 position: fixed;
                 top: 70px;
                 left: 0;
@@ -430,9 +432,17 @@
                 z-index: 999;
             }
 
+            .lang-toggle {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+
             .nav-links.active {
-                height: 300px;
+                height: auto;
+                /* Allow height to fit content */
+                min-height: 300px;
                 padding: 1rem 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             }
 
             .nav-links li {
